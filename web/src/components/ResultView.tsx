@@ -39,8 +39,8 @@ export function ResultView({ result }: { result: DiffResult }) {
               <td>{i}</td>
               <td data-testid="row-type">{LABELS[row.type]}</td>
               <td data-testid="row-value">{row.value}</td>
-              <td data-testid="row-source">{row.source || "—"}</td>
-              <td data-testid="row-target">{row.target || "—"}</td>
+              <td data-testid="row-source">{row.source ?? "—"}</td>
+              <td data-testid="row-target">{row.target ?? "—"}</td>
             </tr>
           ))}
         </tbody>

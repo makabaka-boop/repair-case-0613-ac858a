@@ -19,6 +19,7 @@ export function App() {
       setResult(await postDiff(source, target));
     } catch (e) {
       setError(e as ApiError);
+      setResult(null);
     } finally {
       setLoading(false);
     }
