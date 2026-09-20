@@ -43,7 +43,7 @@ def bounded_myers(
     if x >= n and y >= m:
         return 0, _backtrack(a, b, trace, 0)
 
-    for d in range(1, max_d):
+    for d in range(1, max_d + 1):
         for k in range(-d, d + 1, 2):
             if k == -d:
                 # 边界：只能从 k+1 向下（插入）到达。
@@ -91,7 +91,7 @@ def _backtrack(
             pred_k = k + 1  # 插入
         elif k == d:
             pred_k = k - 1  # 删除
-        elif prev[k - 1] + 1 > prev[k + 1]:
+        elif prev[k - 1] + 1 >= prev[k + 1]:
             pred_k = k - 1  # 相同 x 时同样选删除前驱
         else:
             pred_k = k + 1

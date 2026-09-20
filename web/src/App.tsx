@@ -15,6 +15,7 @@ export function App() {
   const submit = async () => {
     setLoading(true);
     setError(null);
+    setResult(null);
     try {
       setResult(await postDiff(source, target));
     } catch (e) {
